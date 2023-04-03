@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<htm>
+    <head>
+        <link rel="stylesheet" href="analogStyles.css">
+    </head>
+    <body>
+        <div class="minute">
+        
+            <div class="hour">
+                
+            </div>
+            <div class="seconds">
+                
+            </div>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">
+            const minEL = document.querySelector('.minute');
+            const hourEL = document.querySelector('.hour');
+            const secEL = document.querySelector('.clock');
+
+            setInterval(()=>{
+            const date = new Date;
+           
+            const secDeg= date.getSeconds()/60 * 360 -90;
+            const minDeg= date.getMinutes()/60 * 360 -90;
+            const hourDeg= date.getHours()/12 * 360 -90;
+            secEL.style.transform = 'rotate(${secDeg},deg)';
+            minEL.style.transform = 'rotate(${minDeg},deg)';
+            hourEL.style.transform = 'rotate(${hourDeg},deg)';
+            },1000)   
+            
+        </script>
+    </body>
+</htm>
